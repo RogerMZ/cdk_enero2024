@@ -3,5 +3,5 @@
 # Build image application
 docker build -t app:1.0 .
 
-echo "contruido!!!"
+echo "construido!!!"
 
