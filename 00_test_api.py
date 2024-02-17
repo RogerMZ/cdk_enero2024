@@ -2,7 +2,7 @@
 import requests
 import json
 
-API_URL = 'http://0.0.0.0:3001/saluda/RogerMZ'
+API_URL = 'http://0.0.0.0:3001/saludo/RogerMZ'
 
 # Test GET request
 response = requests.request("GET", API_URL)
