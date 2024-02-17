@@ -6,7 +6,7 @@ pipeline {
         sh 'ls -ltr'
         sh 'docker --version'
         sh 'whoami'
-        sh 'ps docker'
+        sh 'docker ps'
       }
     }
 
