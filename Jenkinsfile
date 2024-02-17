@@ -25,7 +25,7 @@ pipeline {
 
     stage('Test') {
       parallel {
-        stage('Test') {
+        stage('Test00') {
           steps {
             sh 'python3 ./00_test_api.py'
           }
@@ -35,6 +35,12 @@ pipeline {
           steps {
             sleep 5
             sh 'docker logs test_api01'
+          }
+        }
+
+        stage('Test01') {
+          steps {
+            sh 'python3 ./01_test_api.py'
           }
         }
 
