@@ -34,7 +34,7 @@ pipeline {
         stage('Logs') {
           steps {
             sleep 5
-            sh 'docker docker logs test_api01'
+            sh 'docker logs test_api01'
           }
         }
 
