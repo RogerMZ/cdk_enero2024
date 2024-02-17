@@ -59,5 +59,11 @@ pipeline {
       }
     }
 
+    stage('Deploy') {
+      steps {
+        sh 'cat versionImage | xargs bash Scripts/upload_hub.sh'
+      }
+    }
+
   }
 }
