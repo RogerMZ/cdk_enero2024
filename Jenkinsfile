@@ -12,13 +12,13 @@ pipeline {
 
     stage('Build') {
       steps {
-        sh './build.sh'
+        sh 'cat versionImage | xargs ./Scripts/build.sh'
       }
     }
 
     stage('Run') {
       steps {
-        sh 'bash run.sh'
+        sh 'cat versionImage | xargs bash Scripts/run.sh'
         sh 'docker logs test_api01'
       }
     }
@@ -27,7 +27,7 @@ pipeline {
       parallel {
         stage('Test00') {
           steps {
-            sh 'python3 ./00_test_api.py'
+            sh 'python3 ./Scripts_test/00_test_api.py'
           }
         }
 
@@ -40,13 +40,13 @@ pipeline {
 
         stage('Test01') {
           steps {
-            sh 'python3 ./01_test_api.py'
+            sh 'python3 ./Scripts_test/01_test_api.py'
           }
         }
 
         stage('Test02') {
           steps {
-            sh 'python3 ./02_test_api.py'
+            sh 'python3 ./Scripts_test/02_test_api.py'
           }
         }
 
@@ -55,7 +55,7 @@ pipeline {
 
     stage('Stop') {
       steps {
-        sh 'bash stop.sh'
+        sh 'bash Scripts/stop.sh'
       }
     }
 
