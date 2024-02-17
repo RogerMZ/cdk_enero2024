@@ -41,5 +41,11 @@ pipeline {
       }
     }
 
+    stage('Stop') {
+      steps {
+        sh 'bash stop.sh'
+      }
+    }
+
   }
 }
